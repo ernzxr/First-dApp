@@ -1,23 +1,33 @@
 {
-  "name": "first-d-app",
+  "name": "First-dApp",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "first-d-app",
+  "prefix": "First-dApp",
   "sourceRoot": "./src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/first-d-app",
+        "outputPath": "dist/First-dApp",
         "index": "./src/index.html",
         "browser": "./src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js", "./src/polyfills.ts"
+        ],
         "tsConfig": "./tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["./src/favicon.ico", "./src/assets"],
-        "styles": ["./src/styles.scss"],
+        "assets": [
+          "./src/favicon.ico",
+          "./src/assets"
+        ],
+        "styles": [
+          "@angular/material/prebuilt-themes/purple-green.css",
+          "./src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -48,10 +58,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "first-d-app:build:production"
+          "buildTarget": "First-dApp:build:production"
         },
         "development": {
-          "buildTarget": "first-d-app:build:development"
+          "buildTarget": "First-dApp:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -59,7 +69,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "first-d-app:build"
+        "buildTarget": "First-dApp:build"
       }
     }
   }

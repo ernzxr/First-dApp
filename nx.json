@@ -43,5 +43,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "first-d-app"
+  "defaultProject": "First-dApp"
 }

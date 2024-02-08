@@ -32,7 +32,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "first-d-app",
+            "prefix": "First-dApp",
             "style": "kebab-case"
           }
         ]
