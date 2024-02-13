@@ -4,8 +4,10 @@ import { HeroSectionComponent } from './hero-section.component';
 
 @Component({
   selector: 'bob-home-page',
-  template: `<bob-hero-section></bob-hero-section>
-    <bob-features-section></bob-features-section>`,
+  template: `
+    <bob-hero-section></bob-hero-section>
+    <bob-features-section></bob-features-section>
+  `,
   standalone: true,
   imports: [FeaturesSectionComponent, HeroSectionComponent],
 })

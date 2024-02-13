@@ -1,12 +1,8 @@
 import { DecimalPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { Component } from '@angular/core';
 import { MatAnchor } from '@angular/material/button';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { WalletStore } from '@heavy-duty/wallet-adapter';
 import { HdWalletMultiButtonComponent } from '@heavy-duty/wallet-adapter-material';
-import { computedAsync } from 'ngxtension/computed-async';
-import { ShyftApiService } from './shyft-api.service';
 
 @Component({
   standalone: true,
@@ -26,16 +22,6 @@ import { ShyftApiService } from './shyft-api.service';
         <hd-wallet-multi-button></hd-wallet-multi-button>
       </div>
 
-      @if (account()) {
-        <div class="mb-4 top-4 left-4 flex justify-center items-center gap-2">
-          <img [src]="account()?.info?.image" class="w-8 h-8" />
-          <p class="text-2xl font-bold">{{ account()?.balance | number }}</p>
-        </div>
-        <div class="mb-4 top-4 left-4 flex justify-center items-center gap-2">
-          <p class="text-2xl font-bold">Rich Bro</p>
-        </div>
-      }
-
       <nav>
         <ul class="flex justify-center items-center gap-4">
           <li>
@@ -43,6 +29,9 @@ import { ShyftApiService } from './shyft-api.service';
           </li>
           <li>
             <a [routerLink]="['settings']" mat-raised-button>Settings</a>
+          </li>
+          <li>
+            <a [routerLink]="['balance']" mat-raised-button>Balance</a>
           </li>
         </ul>
       </nav>
@@ -53,12 +42,4 @@ import { ShyftApiService } from './shyft-api.service';
     </main>
   `,
 })
-export class AppComponent {
-  private readonly _shyftApiService = inject(ShyftApiService);
-  private readonly _walletStore = inject(WalletStore);
-  private readonly _publicKey = toSignal(this._walletStore.publicKey$);
-  readonly account = computedAsync(
-    () => this._shyftApiService.getAccout(this._publicKey()?.toBase58()),
-    { requireSync: true },
-  );
-}
+export class AppComponent {}
