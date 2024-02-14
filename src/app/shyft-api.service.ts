@@ -8,8 +8,8 @@ export class ShyftApiService {
   private readonly _header = {
     'x-api-key': 'Lpo201AC1huW90oM',
   };
-  //private readonly _mint = '7EYnhQoR9YM3N7UoaKRoA44Uy8JeaZV3qyouov87awMs';
-  private readonly _mint = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v';
+  private readonly _mint = '7EYnhQoR9YM3N7UoaKRoA44Uy8JeaZV3qyouov87awMs';
+  //private readonly _mint = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v';
 
   getAccout(publicKey: string | undefined | null) {
     if (!publicKey) {
