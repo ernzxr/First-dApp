@@ -16,7 +16,7 @@ import { HdWalletMultiButtonComponent } from '@heavy-duty/wallet-adapter-materia
   selector: 'First-dApp-root',
   template: `
     <header class="px-16 pt-24 pb-8">
-      <h1 class="text-center text-5xl mb-4">El Banco de Ernesto</h1>
+      <h1 class="text-center text-5xl mb-4">Ernest Bank</h1>
 
       <div class="mb-4 flex justify-center">
         <hd-wallet-multi-button></hd-wallet-multi-button>
